@@ -1,0 +1,57 @@
+
+<div class="site_holder">
+
+  <nav class="person_top">
+    <a href=""><img src="img/furniture/search.png" class="img_search"/></a>
+    <a href="#/nav"><img src="img/furniture/grid.png" class="img_grid"/></a>
+    <a href="#/"><img src="img/furniture/home.png" class="img_home" /></a>     
+
+
+    <div class='container-fluid' ng-controller="TypeaheadCtrl">
+    <span><input type="text" id="search" placeholder="Search" ng-model="selectedPerson" typeahead="person_search.id as person_search.name for person_search in people | filter:$viewValue | limitTo:12" typeahead-on-select="onSelect($item, $model, $label)" typeahead-min-length="1" ng-init="" /></span>
+    </div>
+
+    <h6 class="index"><a href="http://www.ColumbiaMissourian.com">A Missourian Project</a></h6>
+
+  </nav>
+
+    <div class="person_age">
+      <h3>{{person.age_1}}{{person.age_2}}{{person.age_3}}</h3>
+    </div>
+<!--ng-class="{'kern':person.age_1=='2' }"-->
+
+      <h1 class="person_name">{{person.name}}</h1>
+
+      <div class="desktop_quote">
+        <a id="playButton_desktop" ng-click="playing=true">Press play for video</a>
+        <h2 class="person_quote">&#8220;{{person.quote}}&#8221;</h2>
+      </div>
+      
+    <div class="mobile_nav">
+      <div  class="img_arrow_next"><img class="img_arrow" src="img/furniture/arrow.png" alt="next arrow" /><a href="#/{{person.id + 1}}" class="arrow_next"></a></div>
+      <p class="swipe">TAP ARROWS<p>  
+      <div class="img_arrow_back"><img class="img_arrow" src="img/furniture/arrow_back.png" alt="previous arrow" /><a href="#/{{person.id - 1}}" class="arrow_back"></a></div>
+    </div>
+
+    <div id="container">
+
+      <div id="dummy"></div>
+        <div id="element">   
+
+            <iframe id="player" class="fade {{playerFade}}" ng-src="http://player.vimeo.com/video/{{person.video}}?api=1&amp;player_id=player&amp;wmode=opaque" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+            
+            <img id="person_photo" class="fade {{person_photoFade}}" ng-src="{{person.photo_small}}" ng-src-responsive="[ [ '(min-width: 40em)', '{{person.photo_medium}}' ], [ '(min-width: 50em)', '{{person.photo_large}}' ], [ '(min-width: 65em)', '{{person.photo_extralarge}}' ] ]" />
+            
+            <a id="playButton_mobile" class="fade {{playButtonFade}}" ng-click="playing=true"><img src="img/furniture/play.png" class="img_play" alt="play button"/></a>
+        </div>
+    </div>
+
+    <hr class="quote_line"></hr>      
+
+    <nav class="desktop_nav">
+      <a class="previous" href="#/{{person.id - 1}}">
+      <div class="previous"><img class="previous" src="img/furniture/arrow_back.png"><span>Previous</span></div></a>
+      <a class="next" href="#/{{person.id + 1}}"><div class="next"><span>Next</span><img class="next" src="img/furniture/arrow.png"></a></div>
+    </nav>
+
+  </div>    

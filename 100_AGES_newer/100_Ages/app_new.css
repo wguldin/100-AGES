@@ -1,0 +1,1738 @@
+/*
+  Web design by Will Guldin, Summer 2013. Created using Angular.JS javascript library.  
+
+  Dedicated to my Megan, who always puts things in perspective. 
+
+*/
+/*
+*
+*  Margin, padding, and border resets
+*  except for form elements
+*
+*/
+body, div,h1,h2,h3,h4,h5,h6,p,blockquote,pre,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,th,td,article,aside,figure,footer,header,hgroup,menu,nav,section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+
+/*
+*
+*  Consistency fixes
+*  adopted from http://necolas.github.com/normalize.css/
+*
+*/
+html {
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+
+
+
+body {
+  font-size: 100%;
+  min-width: 22em !important;
+  max-width: 65em !important;
+  margin: 0 auto !important;
+  padding-bottom: 2em;
+}
+article,aside,details,
+figcaption,figure,footer,
+header,hgroup,nav,
+section,audio,canvas,video {
+  display: block;
+}
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+b, strong {
+  font-weight: bold;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+input,textarea,button,select {
+  margin: 0;
+  font-size: 100%;
+  line-height: normal;
+  vertical-align: baseline;
+}
+
+
+
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+textarea {
+  overflow: auto;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+
+
+/*Simple fluid media*/
+
+figure {
+  position: relative;
+}
+figure img,
+figure object,
+figure embed,
+figure video {
+  max-width: 100%;
+  display: block;
+}
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+
+/*
+*	Zoomable baseline grid
+*	type size presets
+*/
+
+body {
+  /* 16px / 24px */
+
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+h3 {
+  /* 16px / 24px */
+
+  font-size: 1em;
+  line-height: 1.5em;
+  /* 24 */
+}
+
+h2, h1 {
+  /* 26 / 36px */
+
+  font-size: 1.625em;
+  line-height: 1.3846153846153846em;
+}
+
+
+
+
+/*-----------------------------------------------------------------*/
+/*-------------------------Hidden Styles---------------------------*/
+/*-----------------------------------------------------------------*/
+
+#playButton_desktop {
+  display: none;
+}
+
+span.next, span.previous, #extra, nav.desktop_nav, hr.quote_line, h6.index, #splash_text_desktop, span.click {
+  display: none;
+}
+
+
+/*-----------------------------------------------------------------*/
+/*----------------------Angular Animations-------------------------*/
+/*-----------------------------------------------------------------*/
+
+    .view-enter, .view-leave {
+      -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.35s;
+      -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.35s;
+      -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.35s;
+      transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.35s;
+    }
+
+    .view-enter {
+      opacity:0;
+      left:100px;
+      width:94%;
+      position:absolute;
+    }
+    .view-enter.view-enter-active {
+      left:0;
+      opacity:1;
+    }
+
+    .view-leave {
+      position:absolute;
+      left:0;
+      width:94%;
+      opacity:1;
+    }
+    .view-leave.view-leave-active {
+      left:-100px;
+      opacity:0;
+    }
+
+    .fade {
+        display: block;
+        -webkit-transition: opacity 0.15s linear;
+        -moz-transition: opacity 0.15s linear;
+        -o-transition: opacity 0.15s linear;
+        transition: opacity 0.15s linear;
+        opacity: 0; 
+        height: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .fade.in {
+      opacity: 1;
+      height: auto;
+    }
+
+
+
+/*-----------------------------------------------------------------*/
+/*--------------------------Link Styles----------------------------*/
+/*-----------------------------------------------------------------*/
+
+a {
+  text-decoration: none !important;
+  color: #000;
+}
+
+a:hover {
+  color: #888888;
+}
+
+a #splash_btn {
+  color: #000;
+}
+
+
+
+
+/*
+*  Four-column grid active
+*  ----------------------------------------
+*  Margin   | #  1   2   3   4   |   Margin
+*  5.55555% | %  25  50  75  100 | 5.55555%
+*
+*/
+header, #twoway {
+  margin: 0 5.555555555555555%;
+}
+h1, h2 {
+  margin: 0.9230769230769231em
+  0 1.3846153846153846em;
+}
+h2 {
+  font-weight: normal;
+}
+h3 {
+  margin: 1.5em 0 1.5em;
+}
+/* Simple elastic gutters
+Note: box-sizing will not work in IE6-7*/
+.wrapper {
+  padding: 0 0.75em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+	width: 90%;
+	margin-left: 2.5%;
+	margin-right: 2.5%;
+}
+
+footer {
+  clear: both;
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+
+
+/*-----------------------------------------------------------------*/
+/*----------------------Splash Page Styles-------------------------*/
+/*-----------------------------------------------------------------*/
+
+div.splash {
+  width: 23%;
+  margin-right: 2%;
+  margin-top: 2%;
+
+  float: left;
+  position: relative;
+  display: -moz-inline-stack;  
+  display: inline-block;
+  vertical-align: top;
+  *display: inline;
+}
+
+.splash_img {
+  width: 100%;
+  z-index: 10 !important;
+}
+
+#splash_images {
+  margin-top: 6em;
+  position: relative;
+  width: 100%;
+}
+
+div.age_tag {
+  position: absolute;
+  
+  display: block;
+  opacity: 0; 
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+
+  -webkit-transition: opacity 0.15s linear;
+  -moz-transition: opacity 0.15s linear;
+  -o-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+
+  width: 100%;
+  height: 100%;
+  color: #FFF;
+  background-color: #444444;
+}
+
+div.age_tag > span {
+
+  position: relative;
+  display: block;
+
+  font-family: 'function_proMdCnOb', sans-serif;
+  font-weight: normal;
+  font-size: 4em;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 41%;
+
+}
+
+div.age_tag:hover {
+  opacity: 1;
+  height: 100%;
+}
+
+#splash_text_mobile {
+	width: 100%;
+  clear: both;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#splash_100 {
+  font-family: 'function_prolight', sans-serif;
+  font-weight: normal;
+  font-size: 5.4em;
+  line-height: 100%;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 1px rgba(0,0,0,.2);
+  padding-top: .25em;
+  margin-bottom: 0em;
+  margin-left: -.2em;
+  text-align: center;
+}
+
+span.splash_char_1 {
+  margin-right: -.14em;
+}
+
+hr.line {
+  padding: 0;
+  border: none;
+  border-top: 3px double #878787;
+  width: 92%;
+  margin: 0 auto;
+}
+
+.splash_deck {
+  font-family: 'function_probook', sans-serif;
+  font-weight: normal;
+  text-align: center;
+  font-size: 1.5em;
+  line-height: 100%;
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 1em;
+  padding-bottom: 2em;
+}
+
+#splash_tag {
+  font-family: 'function_prolight', sans-serif;
+  font-size: 2.1em;
+  line-height: 110%;
+  letter-spacing: .4em;  
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-left: .2em;
+  margin-top: .5em;
+  text-shadow: 2px 2px 2px rgba(0,0,0,.1);
+
+}
+
+#splash_btn {
+	font-family: 'function_promedium', sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin: 0 auto;
+  margin-top: -1.5em;
+  margin-bottom: 1em;
+}
+
+div.buffer {
+  margin-bottom: 1em;
+}
+
+/*-----------------------------------------------------------------*/
+/*----------------------Person Page Styles-------------------------*/
+/*-----------------------------------------------------------------*/
+
+.site_holder {
+  width: 100%;
+  padding-bottom: 0em;
+}
+
+nav.person_top {
+  margin-top: .6em;
+}
+
+nav.top {
+  margin-top: .5em;  
+}
+
+h6.index {
+  font-family: "Georgia", serif;
+  font-weight: normal;
+  font-size: .8em;
+  font-style: italic;
+  color: #444444;
+  position: relative;
+  float:left;
+  display: inline-block;
+  margin-left: 0em;
+  margin-top: -.8em;
+}
+
+.person_age {
+  text-align:right;
+  border-bottom: 3px double #878787;
+  width: 100%;
+  height: 5em;
+  margin-top: -3em;
+  float: right;
+  z-index: 0;
+}
+
+.person_age h3 {
+  display:inline-block;
+  background:#fff;
+  font-family: 'function_promedium', sans-serif;
+  font-weight: normal;
+  font-size: 5em;
+  line-height: 40%;
+  text-shadow: 3px 3px 3px rgba(0,0,0,.1);  
+  margin-right: 8%;
+  margin-top: .9em;
+  position: relative;  
+  z-index: 0;  
+}
+
+.char_1 {
+  padding-left: .1em;
+  padding-right: .1em;
+}
+
+.char_2 {
+  margin-left: .02em;
+}
+
+h1.person_name {
+  font-family: 'function_promedium', sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 2.5em;
+  line-height: 100%;
+  width: 100%;
+  padding-top: 1.2em;
+  clear:both;
+}
+
+h2.person_quote {
+  font-family: "Georgia";
+  font-weight: normal;
+  font-size: 1.2em;
+  height: 3em;
+  width: 90%;
+  float: left;
+  margin-top: -2.2em;
+  padding-bottom: -3em;
+  height: auto;
+}
+
+/*-----------------------------------------------------------------*/
+/*----------------------Person Image Styles------------------------*/
+/*-----------------------------------------------------------------*/
+
+.img_grid {
+  width: 2em;
+  margin-left: 1.8em;
+  margin-top: .5em;  
+  position: relative;
+  float: right;  
+  clear: right;
+}
+
+.img_search {
+  width: 2em;
+  margin-left:0%;
+  float: left;
+  margin-right: .8em;
+  margin-bottom: 1em;
+  margin-top: .6em;
+}
+
+.img_home {
+  width: 2em;
+  margin-top: .5em;  
+  float:right;
+  position: relative;
+  z-index: 100000;
+}
+
+div.img_arrow_next {  
+  height: 1.2em;
+  float: right;
+  position: relative;
+  margin-left: .55em;
+}
+
+div.img_arrow_back {  
+  float: right;
+  position: relative;
+  margin-right: 1.6em;
+  height: 1.2em;  
+}
+
+img.img_arrow {
+  height: 100%;
+  position: absolute;
+}
+
+a.arrow_back {
+  position: absolute;
+  padding: 2em;
+  z-index: 10000;
+  margin-right: -1.5em;
+  margin-top: -1.5em;
+}
+
+a.arrow_next {
+  position: absolute;
+  padding: 2em;
+  padding-right: 1em;
+  z-index: 10000;
+  margin-left: -1.5em;
+  margin-top: -1.5em;
+}
+
+div.mobile_nav {
+  width: 55%;
+  float: right;
+  position: relative;
+  right: 1.1em;
+}
+
+p.swipe{
+  font-family: "Georgia", serif;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 1.3em;
+  text-align: right;
+  float:right;
+  position: relative;
+  bottom: .09em;
+}
+
+a img.img_grid {
+  z-index: 100 !important;
+  position: relative;
+}
+
+/*-----------------------------------------------------------------*/
+/*--------------------------Search Styles--------------------------*/
+/*-----------------------------------------------------------------*/
+
+#search {
+  position: relative;
+  z-index: 1000;
+  width: 50%;
+  float: left;
+  bottom: 0em;
+  margin-left: 0%;
+  margin-top: .6em;;
+  }
+
+div.search_person {
+  float: right;
+}
+
+img.search_thumb {
+  width: 100%;
+  float: left;
+}
+
+p.search_name {
+  font-size: 1em;
+  font-weight: normal;
+}
+
+p.search_age {
+  font-size: 1em;
+  font-weight: normal;
+}
+
+p.search_quote {
+  font-size: 1em;
+  font-weight: normal;
+}
+
+
+/*-----------------------------------------------------------------*/
+/*----------------------Video Player Styles------------------------*/
+/*-----------------------------------------------------------------*/
+
+#container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    margin-top: 1.7em;
+} 
+
+#dummy {
+    margin-top: 101%;
+}
+
+#player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 99%;
+  height: 100%;
+  clear: both;
+  border: 1px solid rgb(220,220,220);
+  border-color:  rgba(0,0,0, .1);
+}
+
+#person_photo {
+  width: 100%;
+  position: relative;
+  float:left;
+  float:right;
+  margin-top: -100%;
+  border: 1px solid rgb(220,220,220);
+  border-color:  rgba(0,0,0, .1);
+}
+
+#playButton_mobile {
+  position: absolute;
+  top: -1.7em;
+  left: -1.7em;
+  display: block;
+  padding: 40px;
+}
+
+img.img_play {
+  width: 4em;
+}
+
+/*-----------------------------------------------------------------*/
+/*--------------------Navigation Page Styles-----------------------*/
+/*-----------------------------------------------------------------*/
+
+nav.top {
+  margin-bottom: -4em;
+}
+
+div.nav_outer {
+  position: relative;
+  display: -moz-inline-stack;  
+  display: inline-block;
+  vertical-align: top;
+  *display: inline;
+  width:30%; 
+  margin-right: 1%;
+  margin-top: 2%;
+  padding-top: 0;
+  height:0;   
+  padding-bottom:30%; /* Gives box square shape, along with width measure*/
+
+  border: 2px solid #FFF;
+  background-color:#DDDDDD;
+  color: #444444;
+  text-align: center;
+  
+  -webkit-transition: color 0.3s linear, background-color 0.3s linear;
+  -moz-transition: color 0.3s linear, background-color 0.3s linear;
+  -o-transition: color 0.3s linear, background-color 0.3s linear;
+  transition: color 0.3s linear, background-color 0.3s linear;
+
+}
+
+div.nav_outer:hover {
+  color: #dddddd;
+  background-color: #444444;
+}
+
+div.nav_outer > span {
+  display: inline-block;
+  font-family: 'function_proMdCnOb', sans-serif;
+  font-weight: normal;
+  font-size: 2.5em;
+  padding-top: 37%;
+}
+
+div.nav_outer > span.nav_select { 
+  font-size: 1.8em;
+  line-height: 100%;
+  padding-top: 20%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+div.nav_outer > span.nav_social {
+  font-size: 1.7em;
+  padding-top: 12%;
+  line-height: 105%;
+}
+
+div.nav_omega {
+  color: #dddddd;
+  background-color: #444444;
+}
+
+div.nav_long > span {
+  font-size: 1.3em;
+  padding-top: 15%;
+}
+
+div.nav_social {
+  margin-left: -1%;
+}
+
+div.nav_person {
+  position: relative;
+  display: -moz-inline-stack;
+  display: inline-block;    
+  vertical-align: top;
+  *display: inline;
+
+  width:30%; 
+  margin-right: 2%;
+  margin-top: 2%;  
+  height:0;   
+  padding-bottom:30%; /* Gives box square shape, along with width measure*/
+
+  border: 2px solid #FFF;
+  background: #FFFFFF;
+}
+
+div.nav_person span {
+  position: absolute;
+
+  top: 5%;
+
+  text-align: center;
+
+  color: #444444;
+
+  font-family: 'function_promedium', sans-serif;
+  font-weight: normal;
+  font-size: .9em;
+
+  text-transform: uppercase;
+}
+
+div.nav_img {
+
+  position: relative;
+
+  opacity: 1;
+  z-index: 1;
+
+  -webkit-transition: opacity 0.3s linear;
+  -moz-transition: opacity 0.3s linear;
+  -o-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
+}
+
+div.nav_img:hover {
+  opacity: 0;
+}
+
+#age_block {
+  margin-left: 1.5%;
+  width: 100%;
+  padding-top: 6em;  
+}
+
+/*-----------------------------------------------------------------*/
+/*--------------------------About Styles---------------------------*/
+/*-----------------------------------------------------------------*/
+
+div.about_body {
+  margin-top: 7em;
+}
+
+div.about_video {
+    width: 100%;
+    margin-bottom: 1.2em;
+    margin-top: -2em;
+}
+
+#about_headline {
+  font-family: 'function_promedium', sans-serif;
+  font-weight: normal;
+  font-size: 2.6em;
+  line-height: 110%;
+  margin-bottom: .6em;
+}
+
+a.about_link {
+  text-decoration: underline !important;
+  font-style: italic;
+}
+
+#supervising_tag {
+  font-style: italic;
+}
+
+.thanks {
+  font-style: italic;
+}
+
+span.byline {
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+div.about_body > p {
+  font-size: 1em;
+  font-family: 'Georgia', serif;
+  line-height: 115%;
+  margin-bottom: 1em;
+}
+
+div.mug img {
+  width: 90%;
+  position: relative;
+  margin-bottom: .3em;
+}
+
+div.mug {
+  float: right;
+  width: 7em;
+  padding: .2em;
+  margin-left: 1em;
+  margin-bottom: 1em;
+  clear: right;
+}
+
+div.mug span {
+  font-family: 'function_proMdCnOb', sans-serif;
+  font-weight: normal;
+  font-size: 1.4em;
+}
+
+
+/*-----------------------------------------------------------------*/
+/*-------------------------Footer Styles---------------------------*/
+/*-----------------------------------------------------------------*/
+
+footer {
+  width: 100%;
+  font-family: 'function_proMdCnOb', sans-serif;
+  font-weight: normal;
+  font-size: 1.1em;
+  margin-top: 1em;
+  text-transform: uppercase;
+  border-top: 3px double #878787;
+  clear: both;
+}
+
+footer > ul {
+  margin-top: .7em;
+}
+
+footer li {
+  list-style-type: none;
+  float: left;
+}
+
+li.second {
+  float: right;
+}
+
+li.third {
+  float: right;
+}
+
+a.footer_tag {
+  position: relative;
+}
+
+a.footer_tweet {
+  position: relative;
+  margin-left: 1em;
+}
+
+a.footer_about {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+/*-----------------------------------------------------------------*/
+/*---------------------Media Queries Begin-------------------------*/
+/*-----------------------------------------------------------------*/
+
+@media screen and (min-width: 27em) {
+  
+  .img_grid {
+    width: 2.5em;
+  }
+  .img_search {
+    width: 2.5em;
+  }
+  .img_home {
+    width: 2.5em;
+  }
+
+  #search {
+    margin-top: .3em;
+  }
+
+  h6.index {
+    font-size: 1em;
+  }
+
+  .person_age {
+    margin-top: -2.5em;
+    margin-bottom: -1em;
+  }
+
+  .person_age h3 {
+    font-size: 5.6em;
+    margin-top: .75em;
+  }
+
+  h2.person_quote {
+    font-size:1.4em;
+  }
+
+  h1.person_name {
+    font-size: 3em;
+    padding-top: -1em;
+    margin-top: 0em;
+  }
+
+  #container {
+    margin-top: 1.25em;
+  }
+
+  p.swipe {
+    font-size: 1.3em;
+    bottom: .06em;
+  }
+
+  div.mobile_nav {
+    width: 45%;
+  }
+
+  img.img_arrow_next {
+    height: 1.4em;
+  }
+
+  img.img_arrow_back {
+    height: 1.4em;
+  }
+
+  /*NAV --------------*/
+
+  div.nav_long > span {
+    font-size: 1.4em;
+    padding-top: 11%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  span.nav_social {
+    margin-top: 4%;
+  }
+
+  footer {
+    font-size: 1.3em;
+  }
+
+}
+
+@media screen and (min-width: 30em) {
+
+  body {
+    padding-bottom: .5em;
+  }
+
+  h1.person_name {
+    font-size: 3.2em;
+    padding-top: 1.3em;
+    width: 100%;
+  }
+
+  h6.index {
+    margin-top: .05em;
+  }
+
+  #splash_images {
+    margin-top: 6.5em;
+  }
+
+  .person_age {
+    margin-top: -2.2em;
+  }
+
+  .site_holder {
+    padding-bottom: 1em;
+  }
+
+  .person_age h3 {
+    font-size: 5.9em;
+    margin-top: .7em;
+  }
+
+  #person_photo {
+    margin-bottom: 0em;
+  }
+
+  img.img_play {
+    width: 4.5em;
+  }
+
+  /*NAV -----------------*/
+
+  div.nav_long > span {
+    font-size: 1.6em;
+    padding-top: 13%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  div.nav_outer > span {
+    font-size: 3.2em;
+  }
+
+  div.nav_outer > span.nav_social {
+    margin-top: 6%;
+  }
+
+  div.nav_person span {
+    font-size: 1em;
+    top: 16%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  div.nav_outer > span.nav_select {
+    margin-top: 8%;
+  }
+
+  #age_block {
+    margin-top: 1em;
+  }
+
+  footer {
+    font-size: 1.5em;
+    padding-bottom: 1.5em;
+    margin-top: 0em;  
+  }
+
+  /*---------------------------NAV PAGE STYLES-----------------------*/
+  /*---------------------------NAV PAGE STYLES-----------------------*/
+  /*---------------------------NAV PAGE STYLES-----------------------*/
+
+}
+
+@media screen and (min-width: 35em) {
+  
+  #splash_100 {
+    font-size: 6.4em;
+  }
+
+  #splash_tag {
+    width: 100%;
+    font-size: 2.4em;
+  }
+
+  h6.index {
+    margin-top: -.3em;
+  }
+
+  #dummy {
+    margin-top: 80%;
+  }
+
+  #person_photo {
+    margin-top: -80%;
+  }
+
+  div.nav_long > span {
+    font-size: 1.8em;
+    padding-top: 12%;
+    line-height: 105%;
+  }
+
+  div.nav_outer > span.nav_social {
+    margin-top: 5%;
+    font-size: 2.1em;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  div.nav_person span {
+    font-size: 1.2em;
+    top: 20%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  #age_block {
+    margin-top: 1em;
+  }
+
+} 
+
+/* @media screen and (min-width: 640px) */
+@media screen and (min-width: 40em) {
+  body {
+    /* Zoom baseline grid to 17/16 = 1.0625 */
+  
+    font-size: 1.0625em;
+  }
+
+  h6.index {
+    margin-top: -.4em;
+  }
+
+  img.img_home {
+    margin-right: .75em;
+  }
+
+  .person_age {
+    margin-top: -2.5em;
+  }
+
+  .btn {
+    padding: 10px 18px 10px;
+  }
+
+  span.btn {
+    font-size: 1.3em;
+  }
+
+  div.age_tag > span {
+    font-size: 5.4em;
+    padding-top: 47%;
+  }
+
+  h2.person_quote {
+    margin-top: -1em;
+    font-size: 1.1em;
+  }
+
+  h1.person_name {
+    padding-top: -2em;
+    font-size: 3em;
+  }
+
+  div.nav_outer > span.nav_select {
+    font-size: 2.2em;
+  }
+
+  div.nav_outer > span {
+    font-size: 3.7em;
+    margin-top: 7%;
+  }
+
+  h1 {
+    /* 42px / 48px */
+  
+    font-size: 2.625em;
+    line-height: 1.1428571428571428em;
+    margin: 1.1428571428571428em 0 0.5714285714285714em;
+  }
+}
+
+
+/*
+*  Eight-column grid active
+*  ----------------------------------------------------------------------
+*  Margin   | #  1     2     3     4     5     6     7     8   |   Margin
+*  5.55555% | %  12.5  25.0  37.5  50.0  62.5  75.0  87.5  100 | 5.55555%
+
+@media screen and (min-width: 720px) */
+
+@media screen and (min-width: 45em) {
+
+  #twoway .wrapper {
+    float: left;
+    width: 50%;
+  }
+
+  #container {
+    margin-top: 2em;
+  }
+
+  h1.person_name {
+    font-size: 3.2em;
+    margin-top: .4em;
+  }
+
+  h2.person_quote {
+    margin-top: -.8em;
+    font-size: 1.1em;
+    margin-bottom: 2em;
+  }
+
+  div.nav_long > span {
+    font-size: 2.1em;
+    padding-top: 14%;
+    line-height: 105%;
+  }
+
+  div.nav_outer > span.nav_social {
+    margin-top: 8.5%;
+    margin-left: 12%;
+    margin-right: 12%;
+    font-size: 2.3em;
+  }
+}
+
+@media screen and (min-width: 50em) {
+
+  #search {
+    width: 30%;
+    margin-top: .7em;
+  }
+
+  /*-----------TEXT&SIDEBAR*/
+
+  div.mobile_nav {
+    display: none;
+  }
+
+  h2.person_quote {
+    font-size: 1.1em;
+    float: right;
+    padding-bottom: 0em;
+    margin-bottom: 1em;
+    height: auto;
+  }
+
+  h1.person_name {
+    width: 100%;
+    font-size: 3.2em;
+    margin-top: .7em;
+    margin-bottom: 0em;
+  }
+
+    /*-----------PHOTO & VIDEO*/
+
+  #container {
+    width: 72%;
+    float: left;
+    margin-top: 1.7em;
+    margin-bottom: 2em;
+  }
+
+  #playButton_desktop {
+    display: block;
+    float: left;
+    width: 100%;
+    margin-top: -5%;
+    margin-left: 8%;
+    margin-bottom: 15%;
+    padding-top: 34px;
+    
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: .7em;
+    text-transform: uppercase;
+  }
+
+  #dummy {
+    margin-top: 55%;
+  }
+
+  #person_photo {
+    margin-top: -55%;
+  }
+
+
+  img.img_play {
+    width: 3.7em;
+  }
+
+  /*-----------NAV*/
+
+  div.desktop_quote {
+    width: 27%;
+    float: right;   
+  }
+
+
+  hr.quote_line {
+    display: block;
+    border-bottom: 3px double #878787; 
+    float: right;
+    width: 25%;
+    margin-right: 0em;
+    margin-top: .5em;
+    margin-bottom: 1.3em;
+    z-index: 10000;
+  }
+
+  nav.desktop_nav {
+    display: block;
+    position: relative;
+    
+    font-size: 1em;
+
+    width: 25%;
+    float: right;
+    
+    font-family: 'Georgia', serif;
+    font-style: italic; 
+    text-transform: uppercase;
+  }
+  
+  nav.desktop_nav img {
+    width: 1.5em;
+  }
+
+  nav.desktop_nav div {
+    margin-right: .5em;
+    top: .1em;
+  }
+
+  div.next {
+    float: right;
+    margin-top: .3em;
+    left: .3em;
+  }
+
+  img.next {
+    margin-left: .7em;
+  }
+
+  div.previous {
+    margin-left: .3em;
+  }
+
+  img.previous {
+    margin-right: .7em;
+  }
+
+  footer {
+    margin-top: 0em;  
+  }
+
+  /*---------------------------NAV PAGE STYLES-----------------------*/
+  /*---------------------------NAV PAGE STYLES-----------------------*/
+  /*---------------------------NAV PAGE STYLES-----------------------*/
+
+  div.nav_outer {
+    width: 22%;
+    padding-bottom:22%;
+  }
+
+  div.nav_person {
+    width: 22%;
+    padding-bottom: 22%;
+  }
+
+  div.nav_outer_list {
+    line-height: 90%;
+    padding-bottom: 23%;
+    width: 23%;
+  }
+
+  div.nav_long > span {
+    font-size: 1.7em;
+    margin-top: 4%;
+  }
+
+  #age_block {
+    margin-top: 1em;
+  }
+
+
+
+  /*---------------------------SPLASH PAGE STYLES-----------------------*/
+  /*---------------------------SPLASH PAGE STYLES-----------------------*/
+  /*---------------------------SPLASH PAGE STYLES-----------------------*/
+
+  #splash_text_mobile {
+    display: none;
+  }
+
+  #splash_images {
+    margin-top: 7em;
+  }
+
+  #splash_text_desktop {
+    display: inline-block;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  #splash_tag {
+    font-size: 2.3em;
+    margin-top: -.6em;
+  }
+
+  #splash_100 {
+    font-size: 8em;
+    margin-left: 0%;
+    margin-top: 0em;
+    margin-bottom: -.1em;
+    text-shadow: 3px 3px 1px rgba(0,0,0,.2);
+  }
+
+  .splash_deck {
+    font-family: 'function_probook', sans-serif;
+    font-weight: normal;
+    text-align: center;
+    font-size: 1.3em;
+    line-height: 100%;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 1em;
+  }
+
+  div.age_tag > span {
+    font-size: 3em;
+    padding-top: 40%;
+  }
+
+  div.splash {
+    width: 9%;
+    margin-right: 1%;
+    display: inline-block;
+  }
+
+  hr.line {
+    padding-bottom: 2em;
+    padding-top: 1em;
+  }
+
+  /*---------------------------ABOUT PAGE STYLES-----------------------*/
+  /*---------------------------ABOUT PAGE STYLES-----------------------*/
+  /*---------------------------ABOUT PAGE STYLES-----------------------*/
+
+  div.about_body > p{
+    width: 70%;
+    font-size: 1.2em;
+  }
+
+  div.about_body {
+    margin-top: 8em;
+  }
+
+  div.mug {
+    width: 9em;
+    margin-right: 0%;
+  }
+
+  #about_headline {
+    font-size: 3.4em;
+    width: 80%;
+  }
+
+  #about_video {
+    width: 100%;
+  }
+
+}  
+
+/* @media screen and (min-width: 888px) */
+@media screen and (min-width: 55em) {
+  body {
+    /* Zoom baseline grid to 17/16 = 1.0625 */
+  
+    font-size: 1.0625em;
+  }
+
+  h1.person_name {
+    font-size: 3.4em;
+    width: 90%;
+    margin-top: .7em;
+  }
+
+  #container {
+    margin-top: 1.7em;
+  }
+
+  .person_age {
+    margin-top: -2.75em;
+  }
+
+  .person_age h3 {
+    font-size: 6.1em;
+    margin-top: .72em;
+  }
+
+  #playButton_desktop {
+    font-size: .9em;
+  }
+
+}
+/* @media screen and (min-width: 984px) */
+@media screen and (min-width: 62em) {
+  body {
+    /* Reset baseline grid to 16/16 = 1.0 */
+  
+    font-size: 1em;
+  }
+  header, #twoway {
+    margin: 0 16.666666666666664%;
+  }
+
+  h1.person_name {
+    font-size: 3.8em;
+    margin-top: .75em;
+  }
+
+}
+
+@media screen and (min-width: 64em) {
+
+  h1.person_name {
+    width: 100%;
+    font-size: 4em;
+  }
+
+  #age_block {
+    width: 100%;
+  }
+
+  span.nav_select_list {
+    font-size: 2.7em;
+    line-height: 90%;
+    padding-top: .45em;
+  }
+
+  div.social {
+    font-size: 3.1em;
+    line-height: 90%;
+    padding-top: .9em;
+  }
+
+  div.nav_outer > span.nav_select {
+    margin-left: 20%;
+    margin-right: 20%;
+    font-size: 2.7em;
+  }
+
+  div.nav_outer > span.nav_social {
+    font-size: 2.7em;
+  }
+
+   div.nav_person span {
+    font-size: 1.6em;
+    line-height: 105%;
+    top: 20%;
+    margin-left: 14%;
+    margin-right: 14%;
+
+  }
+
+}  
+
+@media screen and (min-width: 65em) {
+  
+  nav.desktop_nav div {
+    font-size: 1.1em;
+    top: .2em;
+  }
+
+  h1.person_name {
+    margin-top: -.4em;
+  }
+
+  div.previous {
+    float: left;
+    clear: none;
+    margin: 0;
+  }
+
+  #playButton_desktop {
+    font-size: 1em;
+  }   
+
+  div.next {
+    float: right;
+    clear: none;
+    margin: 0;
+  }
+
+  div.mug {
+    margin-right: 10%;
+  }
+
+  #splash_images {
+    margin-top: 5.3em;
+  }
+
+  div.nav_long > span {
+    font-size: 2.3em;
+  }
+
+}
+
+/*-----------------------------------------------------------------*/
+/*---------------------------@FONT FACE----------------------------*/
+/*-----------------------------------------------------------------*/
+
+
+@font-face {
+    font-family: 'function_probold_condensed';
+    src: url('fonts/functionpro_boldcondensed_macroman/FunctionPro-CondensedBold-webfont.eot');
+    src: url('fonts/functionpro_boldcondensed_macroman/FunctionPro-CondensedBold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/functionpro_boldcondensed_macroman/FunctionPro-CondensedBold-webfont.svg#function_probold_condensed') format('svg'),
+         url('fonts/functionpro_boldcondensed_macroman/FunctionPro-CondensedBold-webfont.ttf') format('truetype'),
+         url('fonts/functionpro_boldcondensed_macroman/FunctionPro-CondensedBold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'function_prodemi_oblique';
+    src: url('fonts/functionpro_demioblique_macroman/FunctionPro-DemiOblique-webfont.eot');
+    src: url('fonts/functionpro_demioblique_macroman/FunctionPro-DemiOblique-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/functionpro_demioblique_macroman/FunctionPro-DemiOblique-webfont.woff') format('woff'),
+         url('fonts/functionpro_demioblique_macroman/FunctionPro-DemiOblique-webfont.ttf') format('truetype'),
+         url('fonts/functionpro_demioblique_macroman/FunctionPro-DemiOblique-webfont.svg#function_prodemi_oblique') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'function_promedium';
+    src: url('fonts/functionpro_medium_macroman/FunctionPro-Medium-webfont.eot');
+    src: url('fonts/functionpro_medium_macroman/FunctionPro-Medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/functionpro_medium_macroman/FunctionPro-Medium-webfont.svg#function_promedium') format('svg'),
+         url('fonts/functionpro_medium_macroman/FunctionPro-Medium-webfont.woff') format('woff'),
+         url('fonts/functionpro_medium_macroman/FunctionPro-Medium-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'function_prolight';
+    src: url('fonts/functionpro_light_macroman/FunctionPro-Light-webfont.eot');
+    src: url('fonts/functionpro_light_macroman/FunctionPro-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/functionpro_light_macroman/FunctionPro-Light-webfont.svg#function_prolight') format('svg'),
+         url('fonts/functionpro_light_macroman/FunctionPro-Light-webfont.woff') format('woff'),
+         url('fonts/functionpro_light_macroman/FunctionPro-Light-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'function_prolight_condensed';
+    src: url('fonts/functionpro_lightcondensed_macroman/FunctionPro-CondensedLight-webfont.eot');
+    src: url('fonts/functionpro_lightcondensed_macroman/FunctionPro-CondensedLight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/functionpro_lightcondensed_macroman/FunctionPro-CondensedLight-webfont.svg#function_prolight_condensed') format('svg'),
+         url('fonts/functionpro_lightcondensed_macroman/FunctionPro-CondensedLight-webfont.woff') format('woff'),
+         url('fonts/functionpro_lightcondensed_macroman/FunctionPro-CondensedLight-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'function_probook';
+    src: url('fonts/functionpro_book_macroman/FunctionPro-Book-webfont.eot');
+    src: url('fonts/functionpro_book_macroman/FunctionPro-Book-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/functionpro_book_macroman/FunctionPro-Book-webfont.svg#function_probook') format('svg'),
+         url('fonts/functionpro_book_macroman/FunctionPro-Book-webfont.woff') format('woff'),
+         url('fonts/functionpro_book_macroman/FunctionPro-Book-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'function_proMdCnOb';
+    src: url('fonts/functionpro_mediumcondensedoblique_macroman/FunctionPro-CondensedOblique-webfont.eot');
+    src: url('fonts/functionpro_mediumcondensedoblique_macroman/FunctionPro-CondensedOblique-webfont.eot?#iefix') format('embedded-opentype'),
+             url('fonts/functionpro_mediumcondensedoblique_macroman/FunctionPro-CondensedOblique-webfont.svg#function_proMdCnOb') format('svg'),
+         url('fonts/functionpro_mediumcondensedoblique_macroman/FunctionPro-CondensedOblique-webfont.woff') format('woff'),
+         url('fonts/functionpro_mediumcondensedoblique_macroman/FunctionPro-CondensedOblique-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'function_proBdCnOb';
+    src: url('fonts/functionpro_boldcondensedoblique_macroman/FunctionPro-CondensedBoldObl-webfont.eot');
+    src: url('fonts/functionpro_boldcondensedoblique_macroman/FunctionPro-CondensedBoldObl-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/functionpro_boldcondensedoblique_macroman/FunctionPro-CondensedBoldObl-webfont.woff') format('woff'),
+         url('fonts/functionpro_boldcondensedoblique_macroman/FunctionPro-CondensedBoldObl-webfont.ttf') format('truetype'),
+         url('fonts/functionpro_boldcondensedoblique_macroman/FunctionPro-CondensedBoldObl-webfont.svg#function_proBdCnOb') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+

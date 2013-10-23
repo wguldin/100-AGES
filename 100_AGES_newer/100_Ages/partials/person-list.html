@@ -1,0 +1,34 @@
+<div class="site_holder">
+  <nav class="top">
+    <a href=""><img src="img/furniture/search.png" class="img_search"/></a>
+    <a href="#/nav"><img src="img/furniture/grid.png" class="img_grid"/></a>
+    <a href="#/"><img src="img/furniture/home.png" class="img_home" /></a>     
+
+
+    <div class='container-fluid' ng-controller="TypeaheadCtrl">
+    <span><input type="text" id="search" placeholder="Search" ng-model="selectedPerson" typeahead="person_search.id as person_search.name for person_search in people | filter:$viewValue | limitTo:12" typeahead-on-select="onSelect($item, $model, $label)" typeahead-min-length="1" ng-init="" /></span>
+    </div>
+
+    <h6 class="index"><a href="http://www.ColumbiaMissourian.com">A Missourian Project</a></h6>
+
+  </nav>
+
+<div id="age_block">
+    
+    <a class="nav_link" href="#/nav"><div class="nav_outer nav_omega nav_long"><span>Select a picture, or hit this square to go back.<span></div></a>
+
+    <div class="nav_person" ng-repeat="person in persons">
+    <a href="#/{{person.id}}">
+        <div class="nav_img">
+            <img ng-src="{{person.photo_small}}" ng-alt="{{person.name}}" />
+        </div>
+
+        <span>{{person.name}}, {{person.age}}</span>
+    </a>
+
+    </div>
+
+    <a class="nav_link" href="#/about"><div class="nav_outer nav_omega nav_social"><span class="nav_social">About this Missourian project</span></div></a>
+</div>
+
+</div>

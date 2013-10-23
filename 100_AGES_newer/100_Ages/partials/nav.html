@@ -1,0 +1,33 @@
+<div class="site_holder">
+  
+  <nav class="top">
+    <a href=""><img src="img/furniture/search.png" class="img_search"/></a>
+    <a href="#/nav"><img src="img/furniture/grid.png" class="img_grid"/></a>
+    <a href="#/"><img src="img/furniture/home.png" class="img_home" /></a>     
+
+
+    <div class='container-fluid' ng-controller="TypeaheadCtrl">
+    <span><input type="text" id="search" placeholder="Search" ng-model="selectedPerson" typeahead="person_search.id as person_search.name for person_search in people | filter:$viewValue | limitTo:12" typeahead-on-select="onSelect($item, $model, $label)" typeahead-min-length="1" ng-init="" /></span>
+    </div>
+
+    <h6 class="index"><a href="http://www.ColumbiaMissourian.com">A Missourian Project</a></h6>
+
+  </nav>
+
+<div id="age_block">
+
+    <div class="nav_outer nav_omega"><span class="nav_select">Select an Age Range<span></div>
+    <a class="nav_link" href="#/nav/1"><div class="nav_outer"><span>1–9</span></div></a>
+    <a class="nav_link" href="#/nav/2"><div class="nav_outer"><span>10–19</span></div></a>  
+    <a class="nav_link" href="#/nav/3"><div class="nav_outer"><span>20–29</span></div></a>
+    <a class="nav_link" href="#/nav/4"><div class="nav_outer"><span>30–39</span></div></a>
+    <a class="nav_link" href="#/nav/5"><div class="nav_outer"><span>40–49</span></div></a>
+    <a class="nav_link" href="#/nav/6"><div class="nav_outer"><span>50–59</span></div></a>
+    <a class="nav_link" href="#/nav/7"><div class="nav_outer"><span>60–69</span></div></a>
+    <a class="nav_link" href="#/nav/8"><div class="nav_outer"><span>70–79</span></div></a>
+    <a class="nav_link" href="#/nav/9"><div class="nav_outer"><span>80–89</span></div></a>
+    <a class="nav_link" href="#/nav/0"><div class="nav_outer"><span>90–100</span></div></a>
+    <a class="nav_link" href="#/about"><div class="nav_outer nav_omega"><span class="nav_social">About this Missourian project</span></div></a>
+</div>
+
+</div>

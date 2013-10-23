@@ -1,0 +1,230 @@
+<div class="site_holder">
+
+  <nav class="top">
+    <img src="img/furniture/search.png" class="img_search"/>
+    <div><a href="#/nav"><img src="img/furniture/grid.png" class="img_grid"/></a></div>
+    <div><a href="#/"><img src="img/furniture/home.png" class="img_home" /></a></div>     
+
+
+    <div class='container-fluid' ng-controller="TypeaheadCtrl">
+    <span><input type="text" id="search" placeholder="Search" ng-model="selectedPerson" typeahead="person_search.id as person_search.name for person_search in people | filter:$viewValue | limitTo:12" typeahead-on-select="onSelect($item, $model, $label)" typeahead-min-length="1" ng-init="" /></span>
+    </div>
+
+    <h6 class="index"><a href="http://www.ColumbiaMissourian.com">A Missourian Project</a></h6>
+
+  </nav>
+<div id="splash_images">
+    <div class="splash"><a href="#/1"><div class="age_tag"><span>1</span></div><img class="splash_img" src="img/160/001_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/001_400.jpg' ] ]"></a></div>
+    <div class="splash"><a href="#/2"><div class="age_tag"><span>2</span></div><img class="splash_img" src="img/160/002_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/002_400.jpg' ] ]"></a></div>
+    <div class="splash"><a href="#/3"><div class="age_tag"><span>3</span></div><img class="splash_img" src="img/160/003_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/003_400.jpg' ] ]"></a></div>
+    <div class="splash"><a href="#/4"><div class="age_tag"><span>4</span></div><img class="splash_img" src="img/160/004_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/004_400.jpg' ] ]"></a></div>
+    <div class="splash"><a href="#/5"><div class="age_tag"><span>5</span></div><img class="splash_img" src="img/160/005_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/005_400.jpg' ] ]"></a></div>    
+    <div class="splash"><a href="#/6"><div class="age_tag"><span>6</span></div><img class="splash_img" src="img/160/006_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/006_400.jpg' ] ]"></a></div>
+    <div class="splash"><a href="#/7"><div class="age_tag"><span>7</span></div><img class="splash_img" src="img/160/007_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/007_400.jpg' ] ]"></a></div>
+    <div class="splash"><a href="#/8"><div class="age_tag"><span>8</span></div><img class="splash_img" src="img/160/008_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/008_400.jpg' ] ]"></a></div>
+
+        <div id="splash_text_mobile">
+            <h1 id="splash_100"><span class="splash_char_1">1</span>00 Ages</h1>
+            <hr class="line"></hr>
+            <div id="splash_tag">A Century of Voices</div>
+            <div class="splash_deck">Watch Boone County grow up before your eyes. In 100 videos, one for each age from 1 to 100, Boone County residents tell a small part about themselves that weaves a cross-generational story about us.</div>
+            <a href = "#/1"><h4 id="splash_btn"><span class="btn">Enter the Columbia Missourian project</span></h4></a>
+        </div>
+
+    <div class="splash"><a href="#/9"><div class="age_tag"><span>9</span></div><img class="splash_img" src="img/160/009_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/009_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/10"><div class="age_tag"><span>10</span></div><img class="splash_img" src="img/160/010_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/010_400.jpg' ] ]"></a></div>
+        
+    <div class="splash"><a href="#/11"><div class="age_tag"><span>11</span></div><img class="splash_img" src="img/160/011_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/011_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/12"><div class="age_tag"><span>12</span></div><img class="splash_img" src="img/160/012_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/012_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/13"><div class="age_tag"><span>13</span></div><img class="splash_img" src="img/160/013_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/013_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/14"><div class="age_tag"><span>14</span></div><img class="splash_img" src="img/160/014_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/014_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/15"><div class="age_tag"><span>15</span></div><img class="splash_img" src="img/160/015_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/015_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/16"><div class="age_tag"><span>16</span></div><img class="splash_img" src="img/160/016_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/016_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/17"><div class="age_tag"><span>17</span></div><img class="splash_img" src="img/160/017_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/017_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/18"><div class="age_tag"><span>18</span></div><img class="splash_img" src="img/160/018_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/018_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/19"><div class="age_tag"><span>19</span></div><img class="splash_img" src="img/160/019_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/019_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/20"><div class="age_tag"><span>20</span></div><img class="splash_img" src="img/160/020_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/020_400.jpg' ] ]"></a></div>
+
+        <div id="splash_text_desktop">
+            <h1 id="splash_100"><span class="splash_char_1">1</span>00 Ages</h1>
+            <hr class="line"></hr>
+            <div id="splash_tag">A Century of Voices</div>           
+            <div class="splash_deck">Watch Boone County grow up before your eyes. In 100 videos, one for each age from 1 to 100, Boone County residents tell a small part about themselves that weaves a cross-generational story about us.</div>
+            <a href = "#/1"><h4 id="splash_btn"><span class="btn btn-large">Enter the Columbia Missourian project</span></h4></a>
+
+        </div>
+
+    <div class="splash"><a href="#/21"><div class="age_tag"><span>21</span></div><img class="splash_img" src="img/160/021_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/021_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/22"><div class="age_tag"><span>22</span></div><img class="splash_img" src="img/160/022_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/022_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/23"><div class="age_tag"><span>23</span></div><img class="splash_img" src="img/160/023_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/023_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/24"><div class="age_tag"><span>24</span></div><img class="splash_img" src="img/160/024_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/024_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/25"><div class="age_tag"><span>25</span></div><img class="splash_img" src="img/160/025_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/025_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/26"><div class="age_tag"><span>26</span></div><img class="splash_img" src="img/160/026_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/026_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/27"><div class="age_tag"><span>27</span></div><img class="splash_img" src="img/160/027_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/027_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/28"><div class="age_tag"><span>28</span></div><img class="splash_img" src="img/160/028_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/028_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/29"><div class="age_tag"><span>29</span></div><img class="splash_img" src="img/160/029_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/029_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/30"><div class="age_tag"><span>30</span></div><img class="splash_img" src="img/160/030_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/030_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/31"><div class="age_tag"><span>31</span></div><img class="splash_img" src="img/160/031_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/031_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/32"><div class="age_tag"><span>32</span></div><img class="splash_img" src="img/160/032_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/032_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/33"><div class="age_tag"><span>33</span></div><img class="splash_img" src="img/160/033_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/033_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/34"><div class="age_tag"><span>34</span></div><img class="splash_img" src="img/160/034_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/034_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/35"><div class="age_tag"><span>35</span></div><img class="splash_img" src="img/160/035_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/035_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/36"><div class="age_tag"><span>36</span></div><img class="splash_img" src="img/160/036_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/036_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/37"><div class="age_tag"><span>37</span></div><img class="splash_img" src="img/160/037_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/037_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/38"><div class="age_tag"><span>38</span></div><img class="splash_img" src="img/160/038_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/038_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/39"><div class="age_tag"><span>39</span></div><img class="splash_img" src="img/160/039_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/039_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/40"><div class="age_tag"><span>40</span></div><img class="splash_img" src="img/160/040_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/040_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/41"><div class="age_tag"><span>41</span></div><img class="splash_img" src="img/160/041_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/041_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/42"><div class="age_tag"><span>42</span></div><img class="splash_img" src="img/160/042_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/042_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/43"><div class="age_tag"><span>43</span></div><img class="splash_img" src="img/160/043_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/043_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/44"><div class="age_tag"><span>44</span></div><img class="splash_img" src="img/160/044_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/044_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/45"><div class="age_tag"><span>45</span></div><img class="splash_img" src="img/160/045_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/045_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/46"><div class="age_tag"><span>46</span></div><img class="splash_img" src="img/160/046_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/046_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/47"><div class="age_tag"><span>47</span></div><img class="splash_img" src="img/160/047_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/047_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/48"><div class="age_tag"><span>48</span></div><img class="splash_img" src="img/160/048_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/048_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/49"><div class="age_tag"><span>49</span></div><img class="splash_img" src="img/160/049_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/049_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/50"><div class="age_tag"><span>50</span></div><img class="splash_img" src="img/160/050_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/050_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/51"><div class="age_tag"><span>51</span></div><img class="splash_img" src="img/160/051_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/051_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/52"><div class="age_tag"><span>52</span></div><img class="splash_img" src="img/160/052_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/052_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/53"><div class="age_tag"><span>53</span></div><img class="splash_img" src="img/160/053_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/053_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/54"><div class="age_tag"><span>54</span></div><img class="splash_img" src="img/160/054_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/054_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/55"><div class="age_tag"><span>55</span></div><img class="splash_img" src="img/160/055_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/055_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/56"><div class="age_tag"><span>56</span></div><img class="splash_img" src="img/160/056_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/056_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/57"><div class="age_tag"><span>57</span></div><img class="splash_img" src="img/160/057_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/057_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/58"><div class="age_tag"><span>58</span></div><img class="splash_img" src="img/160/058_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/058_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/59"><div class="age_tag"><span>59</span></div><img class="splash_img" src="img/160/059_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/059_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/60"><div class="age_tag"><span>60</span></div><img class="splash_img" src="img/160/060_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/060_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/61"><div class="age_tag"><span>61</span></div><img class="splash_img" src="img/160/061_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/061_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/62"><div class="age_tag"><span>62</span></div><img class="splash_img" src="img/160/062_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/062_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/63"><div class="age_tag"><span>63</span></div><img class="splash_img" src="img/160/063_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/063_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/64"><div class="age_tag"><span>64</span></div><img class="splash_img" src="img/160/064_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/064_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/65"><div class="age_tag"><span>65</span></div><img class="splash_img" src="img/160/065_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/065_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/66"><div class="age_tag"><span>66</span></div><img class="splash_img" src="img/160/066_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/066_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/67"><div class="age_tag"><span>67</span></div><img class="splash_img" src="img/160/067_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/067_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/68"><div class="age_tag"><span>68</span></div><img class="splash_img" src="img/160/068_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/068_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/69"><div class="age_tag"><span>69</span></div><img class="splash_img" src="img/160/069_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/069_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/70"><div class="age_tag"><span>70</span></div><img class="splash_img" src="img/160/070_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/070_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/71"><div class="age_tag"><span>71</span></div><img class="splash_img" src="img/160/071_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/071_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/72"><div class="age_tag"><span>72</span></div><img class="splash_img" src="img/160/072_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/072_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/73"><div class="age_tag"><span>73</span></div><img class="splash_img" src="img/160/073_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/073_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/74"><div class="age_tag"><span>74</span></div><img class="splash_img" src="img/160/074_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/074_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/75"><div class="age_tag"><span>75</span></div><img class="splash_img" src="img/160/075_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/075_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/76"><div class="age_tag"><span>76</span></div><img class="splash_img" src="img/160/076_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/076_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/77"><div class="age_tag"><span>77</span></div><img class="splash_img" src="img/160/077_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/077_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/78"><div class="age_tag"><span>78</span></div><img class="splash_img" src="img/160/078_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/078_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/79"><div class="age_tag"><span>79</span></div><img class="splash_img" src="img/160/079_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/079_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/80"><div class="age_tag"><span>80</span></div><img class="splash_img" src="img/160/080_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/080_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/81"><div class="age_tag"><span>81</span></div><img class="splash_img" src="img/160/081_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/081_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/82"><div class="age_tag"><span>82</span></div><img class="splash_img" src="img/160/082_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/082_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/83"><div class="age_tag"><span>83</span></div><img class="splash_img" src="img/160/083_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/083_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/84"><div class="age_tag"><span>84</span></div><img class="splash_img" src="img/160/084_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/084_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/85"><div class="age_tag"><span>85</span></div><img class="splash_img" src="img/160/085_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/085_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/86"><div class="age_tag"><span>86</span></div><img class="splash_img" src="img/160/086_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/086_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/87"><div class="age_tag"><span>87</span></div><img class="splash_img" src="img/160/087_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/087_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/88"><div class="age_tag"><span>88</span></div><img class="splash_img" src="img/160/088_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/088_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/89"><div class="age_tag"><span>89</span></div><img class="splash_img" src="img/160/089_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/089_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/90"><div class="age_tag"><span>90</span></div><img class="splash_img" src="img/160/090_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/090_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/91"><div class="age_tag"><span>91</span></div><img class="splash_img" src="img/160/091_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/091_400.jpg' ] ]"></a></div>
+                
+    <div class="splash"><a href="#/92"><div class="age_tag"><span>92</span></div><img class="splash_img" src="img/160/092_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/092_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/93"><div class="age_tag"><span>93</span></div><img class="splash_img" src="img/160/093_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/093_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/94"><div class="age_tag"><span>94</span></div><img class="splash_img" src="img/160/094_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/094_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/95"><div class="age_tag"><span>95</span></div><img class="splash_img" src="img/160/095_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/095_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/96"><div class="age_tag"><span>96</span></div><img class="splash_img" src="img/160/096_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/096_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/97"><div class="age_tag"><span>97</span></div><img class="splash_img" src="img/160/097_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/097_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/98"><div class="age_tag"><span>98</span></div><img class="splash_img" src="img/160/098_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/098_400.jpg' ] ]"></a></div>
+
+    <div class="splash"><a href="#/99"><div class="age_tag"><span>99</span></div><img class="splash_img" src="img/160/099_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/099_400.jpg' ] ]"></a></div>
+
+    <div class="splash buffer"><a href="#/100"><div class="age_tag"><span>100</span></div><img class="splash_img" src="img/160/100_160.jpg" ng-src-responsive="[ [ '(min-width: 40em)', 'img/400/100_400.jpg' ] ]"></a></div>
+
+</div>
+
+
+</div>
